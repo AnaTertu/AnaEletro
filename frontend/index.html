@@ -16,22 +16,17 @@
         <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
 
-        <script type="text/babel">  
+        <script type="text/babel"> 
 
-           // async function getApi() {
+             
 
-//                const response = await fetch ("http://www.localhost/react-php/backend")
-  //              const dados = await response.json();
-    //            console.log(dados)
+            async function getApi() {
 
-      //      }
+                const response = await fetch ("http://www.localhost/react-php/backend")
+                const dados = await response.json();
+                info = dados;
 
-            function getApi() {
-                fetch("http://www.localhost/react-php/backend")
-                    .then(response => response.json())
-                    .then(dados => console.log (dados) )
             }
-
 
             const Header = () => {
                     return ( 
@@ -45,7 +40,7 @@
                     return(
                         <div className="card w-50 mt-5 mx-auto">
                             <div className="card-header"> 
-                                Nome
+                                {info.names}
                             </div>
                             <div className="card-body">
                                 Telefone: 11968286839 
