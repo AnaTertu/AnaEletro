@@ -13,15 +13,30 @@
         {
             $connection = Connection::getDb();
 
-            $stmt = $connection->query("SELECT * FROM peoples");
+            $stmt = $connection->query("SELECT * FROM fullstackeletro.peoples");
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
 
-        public static function getTotalPeoples()
+        public function registerPeople()
         {
             $connection = Connection::getDb();
 
-            $stmt = $connection->query("SELECT count(*) as total_peoples from peoples");
-            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+            //1 registros inserido com sucesso insomina e no bd
+            $stmt = $connection->query("INSERT INTO fullstackeletro.peoples(names, phones, posts) values ('$this->names', '$this->phones', '$this->posts')"); 
+           //3 registros removidos com sucesso insomina e no bd
+           // $stmt = $connection->query("DELETE FROM peoples WHERE id = 2 OR id = 3 OR id = 4"); 
+            
+           //verifica a quanti//e de linhas afetadas
+           // return $stmt->rowCount(); 
+
+           //se um registro foi inserido, então tome uma ação ou então tome outra
+            if ($stmt->rowCount()>0) {
+                return true;
+            } else {
+                return false;
+            }
+               
         }
+        
+
     }

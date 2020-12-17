@@ -1,41 +1,46 @@
 const Card = () => {
-    const [people, setPeople] = React.useState([])
+    const [product, setproduct] = React.useState([])
+    const [render, setRender] = React.useState(false)
+    const [msg, setMsg] = React.useState(false)
 
     React.useEffect(async () => {
         const url = "http://www.localhost/react-php/backend";
         const response = await fetch(url);
-        setPeople(await response.json());
+        setproduct(await response.json());
     }, [])
 
-    function registerClient(event){
+    function registerProduct(event){
         event.preventDefault();
        // console.log(event.target);
 
-        let formData = new FormData(event.target)
+        let formData = new FormData(event.target);
 
-        const url = "http://www.localhost/react-php/backend/register-client.php";
+        const url = "http://www.localhost/react-php/backend/register-product.php";
 
          //padrão Get pega dados recuperadados ,, pra onde está sendo enviado é POST 
-        fetch(url, {
+        //GET - 1 Parametro
+        //POST - 2 Parametros
+        //GET e POST
+        //fetch inseri dados e then recupera dados
+         fetch(url, {
             method: "POST",
             body: formData
+        })  
+            .then((response) => response.json())
+            .then((dados)=> {
+                setRender(!render);
+                setMsg(dados);
 
+                setTimeout(() => {
+                    setMsg(false);
+                }, 3000);
         })
-
     }
 
     return (
         <div clasName="container py-5">
 
-            <div className="card w-50 mx-auto mt-3 border-0">
-                <form onSubmit={registerClient}>
-                    <input className="form-control mt-2" type="text" name="names" placeholder="Nome"/>
-                    <input className="form-control mt-2" type="text" name="phones" placeholder="Telefone: "/>
-                    <input className="form-control mt-2" type="text" name="posts" placeholder="Mensagem: "/>
-                    <button className="btn btn-info w-100 w-2">Envio de mensagem</button>
-                </form>
-            </div>
-            {people.map((element) => {
+            {product.map((element) => {
                 return (
                     <div key={element.id} className="card w-50 mx-auto mt-3"> 
                         <div className="card-header">
