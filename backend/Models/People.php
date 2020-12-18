@@ -13,7 +13,7 @@
         {
             $connection = Connection::getDb();
 
-            $stmt = $connection->query("SELECT * FROM fullstackeletro.peoples");
+            $stmt = $connection->query("SELECT * FROM fseletro.peoples");
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
 
@@ -22,7 +22,7 @@
             $connection = Connection::getDb();
 
             //1 registros inserido com sucesso insomina e no bd
-            $stmt = $connection->query("INSERT INTO fullstackeletro.peoples(names, phones, posts) values ('$this->names', '$this->phones', '$this->posts')"); 
+            $stmt = $connection->query("INSERT INTO fseletro.peoples(names, phones, posts) values ('$this->names', '$this->phones', '$this->posts')"); 
            //3 registros removidos com sucesso insomina e no bd
            // $stmt = $connection->query("DELETE FROM peoples WHERE id = 2 OR id = 3 OR id = 4"); 
             

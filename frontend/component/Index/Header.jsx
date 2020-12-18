@@ -11,14 +11,14 @@ const Header = () => {
                 <a href="product.html" className="navbar-brand nav-link text-light">
                     Produtos
                 </a>
+                < a href="image.html" className="navbar-brand nav-link">
+                    Imagens Api
+                </a>
             </nav>
             
             <nav>
-                <br/>
                 <h2 className="nav-link text-light"> Seja Bem-vindo(a), cadastre-se aqui!</h2>    
-                <br/>
                 <h5 className="nav-link text-light"> Em nossa loja, <em>programadores tem desconto</em> nos produtos para a sua casa!</h5>
-                <br/>
             </nav>
         </header>
     );

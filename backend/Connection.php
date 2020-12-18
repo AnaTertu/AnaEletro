@@ -6,7 +6,7 @@
         public static function getDb()
         {
             $conn = new PDO(
-                "mysql:host=localhost;dbname=fullstackeletro;charset=utf8",
+                "mysql:host=localhost;dbname=fseletro;charset=utf8",
                 "root",
                 ""
             );
