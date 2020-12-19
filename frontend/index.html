@@ -17,10 +17,38 @@
         <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
 
+        <!-- <script>
+            <button onclick="getApi()">
+            Clique para ver os produtos
+            </button>
+        </script>
+        <div id="product.php"></div>
+        <script>
+            
+            async function getApi()
+            {
+
+                const url = "http://api.www.localhost/react-php/backend/product.php";
+
+                const response = await fetch(url)
+                const dados = await response.json()
+                
+                let div = document.getElementById('product.php')
+
+                dados.map((dado) => {
+                    div.innerHTML += `<img src="${dado.imageProducts}" width="150" />`
+                })
+            } 
+
+
+        </script> -->
+      
+
         <script type="text/babel" src="./component/Index/Header.jsx"></script>
         <script type="text/babel" src="./component/Index/Card.jsx"></script>
         <script type="text/babel" src="./component/Index/App.jsx"></script>
         <script type="text/babel" src="./component/Index/Index.js"></script>
-      
+
+        
     </body>
 </html>
