@@ -4,8 +4,10 @@
 
     $people = new People;
     $people->names = $_POST['names'];
+    $people->email = $_POST['email'];
     $people->phones = $_POST['phones'];
     $people->posts = $_POST['posts'];
+    $people->passwords = $_POST['passwords'];
 
    // echo $people->registerPeople();
 

@@ -6,8 +6,10 @@
     {
         public $id;
         public $names;
+        public $email;
         public $phones;
         public $posts;
+        public $passwords;
 
         public static function getAll()
         {
@@ -21,15 +23,8 @@
         {
             $connection = Connection::getDb();
 
-            //1 registros inserido com sucesso insomina e no bd
-            $stmt = $connection->query("INSERT INTO fseletro.peoples(names, phones, posts) values ('$this->names', '$this->phones', '$this->posts')"); 
-           //3 registros removidos com sucesso insomina e no bd
-           // $stmt = $connection->query("DELETE FROM peoples WHERE id = 2 OR id = 3 OR id = 4"); 
-            
-           //verifica a quanti//e de linhas afetadas
-           // return $stmt->rowCount(); 
-
-           //se um registro foi inserido, então tome uma ação ou então tome outra
+            $stmt = $connection->query("INSERT INTO fseletro.peoples(names, email, phones, posts, passwords) values ('$this->names', '$this->email','$this->phones', '$this->posts', '$this->passwords')"); 
+          
             if ($stmt->rowCount()>0) {
                 return true;
             } else {

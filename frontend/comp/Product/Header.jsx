@@ -12,7 +12,7 @@ const Header = () => {
                     Produtos
                 </a>
                 {/* < a href="image.html" className="navbar-brand nav-link">
-                    Imagens Api
+                    Pedido
                 </a> */}
             </nav>
         </header>

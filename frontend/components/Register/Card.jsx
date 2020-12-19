@@ -17,12 +17,7 @@ const Card = () => {
 
         const url = "http://www.localhost/react-php/backend/register-client.php";
 
-         //padrão Get pega dados recuperadados ,, pra onde está sendo enviado é POST 
-        //GET - 1 Parametro
-        //POST - 2 Parametros
-        //GET e POST
-        //fetch inseri dados e then recupera dados
-         fetch(url, {
+        fetch(url, {
             method: "POST",
             body: formData
         })  

@@ -2,6 +2,8 @@ const Card = () => {
     const [people, setPeople] = React.useState([])
     const [render, setRender] = React.useState(false)
     const [msg, setMsg] = React.useState(false)
+  //  const [email, setEmail] = React.useState("")
+    //const [passwords, setPasswords] = React.useState("")
 
     React.useEffect(async () => {
         const url = "http://www.localhost/react-php/backend";
@@ -38,9 +40,12 @@ const Card = () => {
 
             <div className="card w-50 mx-auto mt-3 border-0">
                 <form onSubmit={registerClient}>
-                    <input className="form-control mt-2" type="text" name="names" placeholder="Nome"/>
+                    <input className="form-control mt-2" type="text" name="names" placeholder="Nome: "/>
+                    <input className="form-control mt-2" type="text" name="email" placeholder="E-mail: " />
                     <input className="form-control mt-2" type="text" name="phones" placeholder="Telefone: "/>
                     <input className="form-control mt-2" type="text" name="posts" placeholder="Mensagem: "/>
+                    <input className="form-control mt-2" type="text" name="passwords" placeholder="Senha: "/>
+                    
                     <button className="btn btn-info w-100 w-2">Envio de mensagem</button>
                 </form>
             </div>
