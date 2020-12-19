@@ -31,14 +31,14 @@ const Card = () => {
 
                 setTimeout(() => {
                     setMsg(false);
-                }, 3000);
+                }, 2000);
         })
     }
 
     return (
         <div clasName="container py-5">
 
-            <div className="card w-50 mx-auto mt-3 border-0">
+            <div className="card w-50 mx-auto mt-5 border-0">
                 <form onSubmit={registerClient}>
                     <input className="form-control mt-2" type="text" name="names" placeholder="Nome: "/>
                     <input className="form-control mt-2" type="text" name="email" placeholder="E-mail: " />

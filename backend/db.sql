@@ -51,7 +51,7 @@ VALUES
   ('lavaroupa', 'lavadadora de roupas brastemp 11kg com turbo performace branca', 1699.00, 1214.10, 'imag/lavadora_brastemp'),
   ('lavaroupa', 'lavadora philco inverter 12kg', 2399.90, 2179.90, 'imag/lavadora_philco');
 
-INSERT INTO fseletro.peoples (names, email,phones, posts, passwords) VALUES('Ana Tertuliano', 'ana@gmail', '551198459845', "Olá, mundo!", 12345678);
-INSERT INTO fseletro.peoples (names, email,phones, posts, passwords) VALUES('Elnatan', 'elnatan@gmail.com','551195293527', 'Ótimos produtos.', 123);
-INSERT INTO fseletro.peoples (names, email,phones, posts, passwords) VALUES('Thamirez', 'thami@gmail.com','5511958011441', 'Parabéns pela loja', 456);
-INSERT INTO fseletro.peoples (names, email,phones, posts, passwords) VALUES('Diego', 'diego@gmail.com', '5511998369001', 'Chegamos aqui', 789);
+INSERT INTO fseletro.peoples (names, email, phones, posts, passwords) VALUES('Ana Tertuliano', 'ana@gmail', '551198459845', "Olá, mundo!", 12345678);
+INSERT INTO fseletro.peoples (names, email, phones, posts, passwords) VALUES('Elnatan', 'elnatan@gmail.com','551195293527', 'Ótimos produtos.', 123);
+INSERT INTO fseletro.peoples (names, email, phones, posts, passwords) VALUES('Thamirez', 'thami@gmail.com','5511958011441', 'Parabéns pela loja', 456);
+INSERT INTO fseletro.peoples (names, email, phones, posts, passwords) VALUES('Diego', 'diego@gmail.com', '5511998369001', 'Chegamos aqui', 789);

@@ -37,15 +37,21 @@ const Card = () => {
 
             {people.map((element) => {
                 return (
-                    <div key={element.id} className="card w-50 mx-auto mt-3"> 
+                    <div key={element.id} className="card w-50 mx-auto mt-5"> 
                         <div className="card-header">
-                            {element.names}
+                            Nome: {element.names}
+                        </div>
+                        <div className="card-body">
+                            E-mail: {element.email}
                         </div>
                         <div className="card-body">
                             Telefone: {element.phones}
                         </div>
                         <div className="card-footer">
-                            mensagem: {element.posts}
+                            Mensagem: {element.posts}
+                        </div>
+                        <div className="card-body">
+                            Senha:  {element.passwords}
                         </div>
                     </div>
                 )
