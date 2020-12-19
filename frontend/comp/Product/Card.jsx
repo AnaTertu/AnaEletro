@@ -33,30 +33,30 @@ const Card = () => {
                         
                     </div> 
                     <div container >
-                        <main style = {{paddingLeft: "32px"}}>
+                        <main ClassName="container-fluid" style = {{paddingLeft: "32px"}}>
+                            <hr/>
+                            <Category/>
                             <section>
-                            
-                                <img image= {products.map((element) => (
-                                    element.imageProducts      
-                                )) } alt= {products.map((element) => (
-                        
-                                    element.category           
-                                )) }/>
-
-                                 <h2>{products.map((element) => (
-                        
-                                    element.descriptionProducts           
-                                )) }</h2>
-                                <p> {products.map((element) => (
-                        
-                                    element.prices           
-                                )) }</p>
-                                <h3>{products.map((element) => (
-                        
-                                    element.pricesEnd          
-                                )) }</h3>
-                                
-
+                                <div id="container">
+                                    {produtos.map(element =>
+                                        <div key={element.idproducts} className={`secProdutos text-dark ${item.category}`}>
+                                            <figure>
+                                                <img onClick={exibirZoom} className="descriptionProducts"
+                                                data-toggle="modal" data-target=".bd-exemple-modal-sm" id={elementement.idproducts} src={requestAnimationFrame(`url ${element.imageProducts}`).default} alt= {products.map((element) => (
+                                                    element.category           
+                                                    )) }/>
+                                            </figure>
+                                            <figcaption>
+                                                {element.names} {element.descriptionProducts}
+                                                <hr/>
+                                               <s>R${element.price}</s><br/>
+                                               <b className="priceEnd">R${element.priceName</b>
+                                            </figcaption>
+                                            <button className="btnCompra" oncClick={copy}><Link to={() => "/Pedido/" + element.idproducts}>Comprar</Link></button>
+                                                    
+                                        </div>
+                                    )}
+                                </div>                              
                             </section>
                         </main>
                     </div>
