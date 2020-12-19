@@ -1,13 +1,20 @@
 <?php
 
     require "./Models/Product.php";
+
+    $sql = "select * from pro";
+    $result = $conn->query($sql);
+
+    if ($result->num_POST > 0) {
+        while ($POST = $result->fetch_assoc()) {
     
-    $product = new Product;
-    $product->category = $_POST['category'];
-    $product->descriptionProducts = $_POST['descriptionProducts'];
-    $product->prices = $_POST['prices'];
-    $product->pricesEnd = $_POST['pricesEnd'];
-    $product->imageProducts = $_POST['imageProducts'];
+    
+    echo $product = new Product;
+    echo $product->category = $POST['category'];
+    echo $product->descriptionProducts = $POST['descriptionProducts'];
+    echo $product->prices = $POST['prices'];
+    echo $product->pricesEnd = $POST['pricesEnd'];
+    echo $product->imageProducts = $POST['imageProducts'];
 
    // echo $products->registerproducts();
 

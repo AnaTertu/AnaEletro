@@ -15,7 +15,7 @@
         {
             $connection = Connection::getDb();
 
-            $stmt = $connection->query("SELECT * FROM fseletro.products");
+            $stmt = $connection->query("SELECT * FROM pro");
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
     }
