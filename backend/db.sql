@@ -36,24 +36,20 @@ CREATE TABLE fseletro.requests (
     totalValue DECIMAL(8,2)
     ) comment = 'Produtos anunciados na loja fseletro';
     
-CREATE 
-    ALGORITHM = UNDEFINED 
-    DEFINER = `root`@`localhost` 
-    SQL SECURITY DEFINER
-    VIEW `fseletro`.`pro` AS
-    SELECT 
-        `fseletro`.`products`.`idproducts` AS `idproducts`,
-        `fseletro`.`products`.`category` AS `category`,
-        `fseletro`.`products`.`descriptionProducts` AS `descriptionProducts`,
-        `fseletro`.`products`.`prices` AS `prices`,
-        `fseletro`.`products`.`pricesEnd` AS `pricesEnd`,
-        `fseletro`.`products`.`imageProducts` AS `imageProducts`
-    FROM
-        `fseletro`.`products`
-
-    INSERT INTO fseletro.products (category, descriptionProducts, prices, pricesEnd, imageProducts) 
-    VALUES 
-    ('geladeira','geladeira frost free brastemp side inverse 540 litros', 6389.00, 5019.00, 'imag/geladeira_brastemp.jpg');
+ INSERT INTO fseletro.products (category, descriptionProducts, prices, pricesEnd, imageProducts) 
+VALUES 
+  ('geladeira','geladeira frost free brastemp side inverse 540 litros', 6389.00, 5019.00, 'imag/geladeira_brastemp.jpg'),
+  ('geladeira', 'geladeira frost free brastemp branca 375 litros', 2068.60, 1910.90, 'imag/refrigerador_brastemp'),
+  ('geladeira', 'geladeira frost free consul prata 340 litros', 2199.90, 2069.00, 'imag/refrigerador_consul'),
+  ('fogao', 'fogão 4 bocas consul inox com mesa de vidro', 1150.50, 1129.00, 'imag/fogao_consul'),
+  ('fogao', 'fogão de piso 4 bocas atlas monaco com acendimento automático', 609.00, 519.70, 'imag/fogao_monaco'),
+  ('microondas', 'microondas consul 32 litros inox 220v', 580.00, 409.88, 'imag/microndas_consul'),
+  ('microondas', 'microondas 25 litros espelhado philco 220', 508.70, 464.53, 'imag/microondas_philco'),
+  ('microondas', 'forno de microondas electroluz 20l branco 110v', 459.90, 436.05, 'imag/microondas_electroluz'),
+  ('lavalouca', 'lava-louça electrolux inox com 10 serviços, 6 programas de lavagens', 3599.00, 2799.90, 'imag/lava_loucas_electroux'),
+  ('lavalouca', 'lava-louças compacta 8 serviços branca 127v brastemp', 1970.50, 1730.61, 'imag/lava_loucas_brastemp'),
+  ('lavaroupa', 'lavadadora de roupas brastemp 11kg com turbo performace branca', 1699.00, 1214.10, 'imag/lavadora_brastemp'),
+  ('lavaroupa', 'lavadora philco inverter 12kg', 2399.90, 2179.90, 'imag/lavadora_philco');
 
 INSERT INTO fseletro.peoples (names, email, phones, posts, passwords) VALUES('Ana Tertuliano', 'ana@gmail', '551198459845', "Olá, mundo!", 12345678);
 INSERT INTO fseletro.peoples (names, email, phones, posts, passwords) VALUES('Elnatan', 'elnatan@gmail.com','551195293527', 'Ótimos produtos.', 123);

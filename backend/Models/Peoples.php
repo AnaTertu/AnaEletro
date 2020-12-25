@@ -1,8 +1,8 @@
-<?php
+<!-- < ?php
 
     require "Connection.php";
 
-    class Order
+    class Peoples
     {
         public $id;
         public $namesC;
@@ -34,4 +34,4 @@
         }
         
 
-    }
+    } -->
