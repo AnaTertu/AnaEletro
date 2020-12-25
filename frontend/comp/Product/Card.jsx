@@ -38,7 +38,6 @@ const Card = () => {
 
                     <div>
                         <div className="card mx-auto mt-5" style={{width:"300px"}} onClick={zoom}>
-
                             <div className="card-bady d-flex justify-content-center">
                                 <img width="100" id="prod" src=
                                     {products.map((element, props) => (
