@@ -18,6 +18,8 @@ const Card = () => {
         }
     }
 
+
+
     return (
                 
             <div className="container nav align-items-right justify-content-between">
@@ -25,19 +27,15 @@ const Card = () => {
                     <div className="card w-50 mx-1 mt-3"> 
                         <h4> Categoria </h4>
 
-                        {/* {names.filter(name => name.includes('J')).map(filteredName => (
-                        <li>
-                        {filteredName}
-                        </li>
-                        ))} */}
+
                     
                         <ul>
                             <li> Todos ({products.length}) </li>
-                            <li> Geladeiras ({products.length}) </li>
-                            <li> Fogões ({products.length}) </li>
-                            <li> Microondas ({products.length}) </li>
-                            <li> Lavadoura de roupa ({products.length}) </li>
-                            <li> Lava-louças ({products.length}) </li>
+                            <li> Geladeiras ({products.filter(product => product.idCategory==1).length}) </li>
+                            <li> Fogões ({products.filter(product => product.idCategory==2).length}) </li>
+                            <li> Microondas ({products.filter(product => product.idCategory==3).length}) </li>
+                            <li> Lavadoura de roupa ({products.filter(product => product.idCategory==4).length}) </li>
+                            <li> Lava-louças ({products.filter(product => product.idCategory==4).length}) </li>
                         </ul>
                         
                     </div> 
