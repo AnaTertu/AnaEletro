@@ -24,14 +24,20 @@ const Card = () => {
 
                     <div className="card w-50 mx-1 mt-3"> 
                         <h4> Categoria </h4>
+
+                        {/* {names.filter(name => name.includes('J')).map(filteredName => (
+                        <li>
+                        {filteredName}
+                        </li>
+                        ))} */}
                     
                         <ul>
-                            <li onShowAllButtonClick> Todos (12) </li>
-                            <li onFilterCategoryClick> Geladeiras (3) </li>
-                            <li onFilterCategoryClick> Fogões (2) </li>
-                            <li onFilterCategoryClick> Microondas (3) </li>
-                            <li onFilterCategoryClick> Lavadoura de roupa (2) </li>
-                            <li onFilterCategoryClick> Lava-louças (2) </li>
+                            <li> Todos ({products.length}) </li>
+                            <li> Geladeiras ({products.length}) </li>
+                            <li> Fogões ({products.length}) </li>
+                            <li> Microondas ({products.length}) </li>
+                            <li> Lavadoura de roupa ({products.length}) </li>
+                            <li> Lava-louças ({products.length}) </li>
                         </ul>
                         
                     </div> 
@@ -42,29 +48,30 @@ const Card = () => {
                                 <img width="100" id="prod" src=
                                     {products.map((element, props) => (
                                         [element.imageProducts, ...props]
-                                    ))}
+                                    ))[0]}
                                     alt=
                                     {products.map((element, props) => (
                                         [element.category, ...props]
-                                    ))}></img>
+                                    ))[0]}></img>
+                                    
                             </div>
                             <div className="card-header text-center">
                                 <h5>
                                     {products.map((element, props) => (
                                         [ element.descriptionProducts, ...props]
-                                    ))}                                    
+                                    ))[0]}                                    
                                 </h5>
                             </div>
                             <div className="card-header text-center">
                                 <h6>
                                     {products.map((element, props) => (
                                         [ element.prices, ...props]
-                                    ))}                                    
+                                    ))[0]}                                    
                                 </h6>
                                 <h4>
                                     {products.map((element, props) => (
                                         [ element.pricesEnd, ...props]
-                                    ))}                                    
+                                    ))[0]}                                    
                                 </h4>
                             </div>
                         </div>
