@@ -1,4 +1,4 @@
-DROP DATABASE IF EXISTS fseletro;
+DR  OP DATABASE IF EXISTS fseletro;
 CREATE DATABASE IF NOT EXISTS fseletro;
 
 USE fseletro;
@@ -6,6 +6,26 @@ USE fseletro;
  SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
     START TRANSACTION;
     SET time_zone = "+00:00";
+    
+CREATE TABLE fseletro.peoples(
+    idpeople INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    nameC VARCHAR(80) NOT NULL,
+    email VARCHAR(80) NOT NULL,
+    phones INT(14) NOT NULL,
+    posts VARCHAR(200),
+    dates TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    passwords INT(8) NOT NULL
+) comment = 'Clientes da loja fseletro.';
+
+CREATE TABLE fseletro.requests(
+    idRequest INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    namesC VARCHAR(45) NOT NULL,
+    phonesC INT(14) NOT NULL,
+    addressC VARCHAR(150),
+    descriptionProducts VARCHAR(150),
+	pricesEnd DECIMAL(8,2),
+    amount INT
+    ) comment = 'Produtos anunciados na loja fseletro';
 
 CREATE TABLE fseletro.category (
     idCategory INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
@@ -22,30 +42,13 @@ CREATE TABLE fseletro.products(
     imageProducts VARCHAR(255) NOT NULL
     ) comment = 'Produtos anúnciados na loja fseletro.';
 
-ALTER TABLE fseletro.products ADD CONSTRAINT FOREIGN KEY (idCategory) REFERENCES fseletro.category (idCategory)
+ALTER TABLE fseletro.products ADD CONSTRAINT FOREIGN KEY (idCategory) REFERENCES fseletro.category (idCategory);
 
-CREATE TABLE fseletro.peoples(
-    idpeople INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    nameC VARCHAR(80) NOT NULL,
-    email VARCHAR(80) NOT NULL,
-    phones INT(14) NOT NULL,
-    posts VARCHAR(200),
-    dates datetime now(),
-    passwords INT(8) NOT NULL
-) comment = 'Clientes da loja fseletro.';
-
-CREATE TABLE fseletro.requests(
-    idrequests INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    namesC VARCHAR(45) NOT NULL,
-    addressC VARCHAR(150),
-    phonesC INT(14) NOT NULL,
-    descriptionProducts VARCHAR(150),
-	pricesEnd DECIMAL(8,2),
-    amount INT,
-    totalValue DECIMAL(8,2)
-    ) comment = 'Produtos anunciados na loja fseletro';
-
-INSERT INTO fseletro.category VALUES (1,'Geladeiras'), (2, 'Fogões'), (3, 'Microondas'), (4, 'Lava Louças'), (5, 'Lava Roupas');
+INSERT INTO fseletro.category VALUES (1,'Geladeiras'); 
+INSERT INTO fseletro.category VALUES (2, 'Fogões'); 
+INSERT INTO fseletro.category VALUES (3, 'Microondas'); 
+INSERT INTO fseletro.category VALUES (4, 'Lava Louças'); 
+INSERT INTO fseletro.category VALUES (5, 'Lava Roupas');
     
  INSERT INTO fseletro.products (idCategory, category, descriptionProducts, prices, pricesEnd, imageProducts) 
 VALUES 
@@ -66,3 +69,6 @@ INSERT INTO fseletro.peoples (nameC, email, phones, posts, passwords) VALUES('An
 INSERT INTO fseletro.peoples (nameC, email, phones, posts, passwords) VALUES('Elnatan', 'elnatan@gmail.com','551195293527', 'Ótimos produtos.', 123);
 INSERT INTO fseletro.peoples (nameC, email, phones, posts, passwords) VALUES('Thamirez', 'thami@gmail.com','5511958011441', 'Parabéns pela loja', 456);
 INSERT INTO fseletro.peoples (nameC, email, phones, posts, passwords) VALUES('Diego', 'diego@gmail.com', '5511998369001', 'Chegamos aqui', 789);
+
+INSERT INTO fseletro.requests (namesC,  phonesC, addressC, descriptionProducts, pricesEnd, amount) VALUES('Ana Tertuliano', '551198459845', "Rua A, 11 -SP", "microondas 25 litros espelhado philco 220", 464.53, 3);
+INSERT INTO fseletro.requests (namesC,  phonesC, addressC, descriptionProducts, pricesEnd, amount) VALUES('Arnaldo', '551198459845', "Rua B, 13 -SP", "microondas 25 litros espelhado philco 220", 464.53, 1);
