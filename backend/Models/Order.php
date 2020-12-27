@@ -1,0 +1,34 @@
+<?php
+
+    require "Connection.php";
+
+    class Order
+    {
+        public $namesC;
+        public $phonesC;
+        public $addressC;
+        public $descriptionProducts;
+        public $pricesEnd;
+        public $amount;
+
+        public static function getAll()
+        {
+            $connection = Connection::getDb();
+
+            $stmt = $connection->query("SELECT * FROM fseletro.requests");
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        }
+
+        public function registerOrder()
+        {
+            $connection = Connection::getDb();
+
+            $stmt = $connection->query("INSERT INTO fseletro.requests(namesC, phonesC, addressC, descriptionProducts, pricesEnd, amount) values ('$this->namesC',  '$this->phonesC', '$this->addressC','$this->descriptionProducts', '$this->pricesEnd', '$this->amount')"); 
+           
+            if ($stmt->rowCount()>0) {
+                return true;
+            } else {
+                return false;
+            }       
+        }
+    }
