@@ -2,17 +2,17 @@
 
     require "./Models/People.php";
 
-    $people = new People;
-    $people->names = $_POST['names'];
-    $people->email = $_POST['email'];
-    $people->phones = $_POST['phones'];
-    $people->posts = $_POST['posts'];
-    $people->passwords = $_POST['passwords'];
+    $peoples = new People;
+    $peoples->nameC = $_POST['nameC'];
+    $peoples->email = $_POST['email'];
+    $peoples->phones = $_POST['phones'];
+    $peoples->posts = $_POST['posts'];
+    $peoples->passwords = $_POST['passwords'];
 
-   // echo $people->registerPeople();
+   // echo $peoples->registerPeople();
 
    //se foi inserido - validate == true - se não == false
-   $validate = $people->registerPeople();
+   $validate = $peoples->registerPeople();
 
     // $validate = false;
     // json para que aja retorno no Frontend
@@ -21,4 +21,3 @@
    } else {
        echo json_encode(false);
    }
-
