@@ -1,4 +1,4 @@
-DR  OP DATABASE IF EXISTS fseletro;
+DROP DATABASE IF EXISTS fseletro;
 CREATE DATABASE IF NOT EXISTS fseletro;
 
 USE fseletro;
@@ -7,7 +7,7 @@ USE fseletro;
     START TRANSACTION;
     SET time_zone = "+00:00";
     
-CREATE TABLE fseletro.peoples(
+CREATE TABLE fseletro.people(
     idpeople INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     nameC VARCHAR(80) NOT NULL,
     email VARCHAR(80) NOT NULL,
@@ -17,8 +17,8 @@ CREATE TABLE fseletro.peoples(
     passwords INT(8) NOT NULL
 ) comment = 'Clientes da loja fseletro.';
 
-CREATE TABLE fseletro.requests(
-    idRequest INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+CREATE TABLE fseletro.order(
+    idOrder INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     namesC VARCHAR(45) NOT NULL,
     phonesC INT(14) NOT NULL,
     addressC VARCHAR(150),
@@ -65,10 +65,10 @@ VALUES
   (5, 'lavaroupa', 'lavadadora de roupas brastemp 11kg com turbo performace branca', 1699.00, 1214.10, 'imag/lavadora_brastemp'),
   (5, 'lavaroupa', 'lavadora philco inverter 12kg', 2399.90, 2179.90, 'imag/lavadora_philco');
 
-INSERT INTO fseletro.peoples (nameC, email, phones, posts, passwords) VALUES('Ana Tertuliano', 'ana@gmail', '551198459845', "Olá, mundo!", 12345678);
-INSERT INTO fseletro.peoples (nameC, email, phones, posts, passwords) VALUES('Elnatan', 'elnatan@gmail.com','551195293527', 'Ótimos produtos.', 123);
-INSERT INTO fseletro.peoples (nameC, email, phones, posts, passwords) VALUES('Thamirez', 'thami@gmail.com','5511958011441', 'Parabéns pela loja', 456);
-INSERT INTO fseletro.peoples (nameC, email, phones, posts, passwords) VALUES('Diego', 'diego@gmail.com', '5511998369001', 'Chegamos aqui', 789);
+INSERT INTO fseletro.people (nameC, email, phones, posts, passwords) VALUES('Ana Tertuliano', 'ana@gmail', '5511941969894', "Olá, mundo!", 12345678);
+INSERT INTO fseletro.people (nameC, email, phones, posts, passwords) VALUES('Elnatan', 'elnatan@gmail.com','551195293527', 'Ótimos produtos.', 123);
+INSERT INTO fseletro.people (nameC, email, phones, posts, passwords) VALUES('Thamirez', 'thami@gmail.com','5511958011441', 'Parabéns pela loja', 456);
+INSERT INTO fseletro.people (nameC, email, phones, posts, passwords) VALUES('Diego', 'diego@gmail.com', '5511998369001', 'Chegamos aqui', 789);
 
-INSERT INTO fseletro.requests (namesC,  phonesC, addressC, descriptionProducts, pricesEnd, amount) VALUES('Ana Tertuliano', '551198459845', "Rua A, 11 -SP", "microondas 25 litros espelhado philco 220", 464.53, 3);
-INSERT INTO fseletro.requests (namesC,  phonesC, addressC, descriptionProducts, pricesEnd, amount) VALUES('Arnaldo', '551198459845', "Rua B, 13 -SP", "microondas 25 litros espelhado philco 220", 464.53, 1);
+INSERT INTO fseletro.order (namesC,  phonesC, addressC, descriptionProducts, pricesEnd, amount) VALUES('Ana Tertuliano', '5511941969894', "Rua A, 11 -SP", "microondas 25 litros espelhado philco 220", 464.53, 3);
+INSERT INTO fseletro.order (namesC,  phonesC, addressC, descriptionProducts, pricesEnd, amount) VALUES('Arnaldo', '551198459845', "Rua B, 13 -SP", "microondas 25 litros espelhado philco 220", 464.53, 1);
