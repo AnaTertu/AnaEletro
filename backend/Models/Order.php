@@ -15,7 +15,7 @@
         {
             $connection = Connection::getDb();
 
-            $stmt = $connection->query("SELECT * FROM fseletro.requests");
+            $stmt = $connection->query("SELECT * FROM fseletro.order");
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
 
@@ -23,7 +23,7 @@
         {
             $connection = Connection::getDb();
 
-            $stmt = $connection->query("INSERT INTO fseletro.requests(namesC, phonesC, addressC, descriptionProducts, pricesEnd, amount) values ('$this->namesC',  '$this->phonesC', '$this->addressC','$this->descriptionProducts', '$this->pricesEnd', '$this->amount')"); 
+            $stmt = $connection->query("INSERT INTO fseletro.order(namesC, phonesC, addressC, descriptionProducts, pricesEnd, amount) values ('$this->namesC',  '$this->phonesC', '$this->addressC','$this->descriptionProducts', '$this->pricesEnd', '$this->amount')"); 
            
             if ($stmt->rowCount()>0) {
                 return true;

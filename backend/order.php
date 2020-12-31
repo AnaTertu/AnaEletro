@@ -2,9 +2,9 @@
 
     require "./Models/Order.php";
 
-    header("Access-Control-Allow-Origin:*"); //Permite que outras aplicações consumam a api
-    header("Content-type: application/json"); //Indicação de arquivos Json 
+    header("Access-Control-Allow-Origin:*");
+    header("Content-type: application/json");
 
-    $requests = Order::getAll();
+    $order = Order::getAll();
 
-    echo json_encode($requests);
+    echo json_encode($order);

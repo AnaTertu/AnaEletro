@@ -5,6 +5,6 @@
     header("Access-Control-Allow-Origin:*"); //Permite que outras aplicações consumam a api
     header("Content-type: application/json"); //Indicação de arquivos Json 
 
-    $peoples = People::getAll();
+    $people = People::getAll();
 
-    echo json_encode($peoples);
+    echo json_encode($people);
