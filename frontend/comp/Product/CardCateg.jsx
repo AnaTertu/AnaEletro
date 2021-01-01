@@ -17,7 +17,7 @@ const CardCateg = (props) => {
                 </li>
                 {categories.map((categ) =>(
                     <React.Fragment key={categ.idCategory}>
-                        <li onClick={props.exibir} data-id={categ.idCategory}>
+                        <li onClick={props.exibir} data-id={categ.idCategory} style={{cursor:'pointer'}}>
                             {categ.category} ({props.products.filter(product => product.idCategory == categ.idCategory).length})
                         </li>
                     </React.Fragment>
