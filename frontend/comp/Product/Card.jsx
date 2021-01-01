@@ -10,8 +10,17 @@ const Card = () => {
     setFilteredProducts(prods);
   }, []);
 
-  function exibir(event){
-    console.log(event.currentTarget.dataset.id)
+
+
+   function exibir(event){
+     
+    const categoria = event.currentTarget.dataset.id;
+    console.log(categoria)
+    if (categoria) {
+        console.log("correto")
+    } else {
+      console.log("falhou")
+    }
   }
 
   return (
