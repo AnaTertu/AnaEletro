@@ -12,7 +12,7 @@ const CardCateg = (props) => {
         <div className="card w-40 h-50 mx-1 mt-3">
             <h4> Categoria </h4>
             <ul>
-            <li onClick={props.exibir}>
+            <li onClick={props.exibir} style={{cursor:'pointer'}}>
                     Todos ({props.products.length})
                 </li>
                 {categories.map((categ) =>(
