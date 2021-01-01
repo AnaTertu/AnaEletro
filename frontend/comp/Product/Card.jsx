@@ -12,14 +12,14 @@ const Card = () => {
 
 
 
-   function exibir(event){
+   function exibirProdutos(event){
      
-    const categoria = event.currentTarget.dataset.id;
-    console.log(categoria)
-    if (categoria) {
-        console.log("filtrado")
+    const idCategoria = event.currentTarget.dataset.id;
+    console.log(idCategoria)
+    if (idCategoria) {
+      setFilteredProducts(products.filter(product => product.idCategory==idCategoria))
     } else {
-      console.log("todos")
+      setFilteredProducts(products)
     }
   }
 
@@ -28,7 +28,7 @@ const Card = () => {
 
       <CardCateg
         products={products}
-        exibir={exibir}
+        exibir={exibirProdutos}
       />
 
       { filteredProducts.map((prod) => (
