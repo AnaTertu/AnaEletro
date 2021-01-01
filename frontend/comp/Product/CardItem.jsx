@@ -12,7 +12,7 @@ const CardItem = (props) => {
     return (
         <div
             className="card mx-auto mt-5 d-inline-block justify-content-sm-center"
-            style={{ width: "300px" }}
+            style={{ width: "300px", cursor:'zoom-in' }}
             onClick={zoom}
         >
 
