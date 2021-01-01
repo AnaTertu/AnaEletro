@@ -1,4 +1,11 @@
 const CardCateg = (props) => {
+    const [categories, setCategories] = React.useState([]);
+
+    React.useEffect(async () => {
+        const url = "http://www.localhost/react-php/backend/category.php";
+        const response = await fetch(url);
+        setCategories(await response.json());
+    }, []);
 
     return (
         <div className="card w-40 h-50 mx-1 mt-3">
