@@ -1,17 +1,25 @@
 const Card = () => {
   const [products, setProduct] = React.useState([]);
+  const [filteredProducts, setFilteredProducts] = React.useState([]);
   
   React.useEffect(async () => {
     const url = "http://www.localhost/react-php/backend/product.php";
     const response = await fetch(url);
-    setProduct(await response.json());
+    const prods = await response.json();
+    setProduct(prods);
+    setFilteredProducts(prods);
   }, []);
+
+  function exibir(event){
+    console.log(event.currentTarget.dataset.id)
+  }
 
   return (
     <div className="container nav align-items-right justify-content-between">
 
       <CardCateg
         products={products}
+        exibir={exibir}
       />
 
       { products.map((prod) => (

@@ -12,12 +12,12 @@ const CardCateg = (props) => {
         <div className="card w-40 h-50 mx-1 mt-3">
             <h4> Categoria </h4>
             <ul>
-                <li>
+            <li onClick={props.exibir}>
                     Todos ({props.products.length})
                 </li>
                 {categories.map((categ) =>(
                     <React.Fragment key={categ.idCategory}>
-                        <li>
+                        <li onClick={props.exibir} data-id={categ.idCategory}>
                             {categ.category} ({props.products.filter(product => product.idCategory == categ.idCategory).length})
                         </li>
                     </React.Fragment>
