@@ -34,7 +34,26 @@ const Card = () => {
         </ul>
       </div>
 
-      <div 
+      <CardItem 
+        image={products.map((prod, props) => (
+          [prod.imageProducts, ...props]
+        ))[[0]]}
+        category={products.map((prod, props) => (
+          [prod.category, ...props]
+        ))[[0]]}
+        description={products.map((prod, props) => (
+          [prod.descriptionProducts, ...props]
+        ))[[0]]}
+        prices={products.map((prod, props) => (
+          [prod.prices, ...props]
+        ))[[0]]}
+        pricesEnd={products.map((prod, props) => (
+          [prod.pricesEnd, ...props]
+        ))[[0]]}
+      />
+      
+
+      {/* <div 
         className="card mx-auto mt-5 d-inline-block justify-content-sm-center" 
         style={{ width: "300px" }} 
       >
@@ -71,7 +90,7 @@ const Card = () => {
 
         </div>
         
-      </div>
-    </div>
+      </div>*/}
+    </div> 
   );
 }
