@@ -17,9 +17,9 @@ const Card = () => {
     const categoria = event.currentTarget.dataset.id;
     console.log(categoria)
     if (categoria) {
-        console.log("correto")
+        console.log("filtrado")
     } else {
-      console.log("falhou")
+      console.log("todos")
     }
   }
 
@@ -31,7 +31,7 @@ const Card = () => {
         exibir={exibir}
       />
 
-      { products.map((prod) => (
+      { filteredProducts.map((prod) => (
         <React.Fragment key={prod.idproducts}>
           <CardItem
             image={prod.imageProducts}
