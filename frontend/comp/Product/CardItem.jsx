@@ -27,7 +27,9 @@ const CardItem = (props) => {
             </div>
             <div className="card-header text-center">
                 <h6>
-                    {props.prices}
+                    <strike>
+                        {props.prices}
+                    </strike>
                 </h6>
                 <h4>
                     {props.pricesEnd}
