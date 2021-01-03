@@ -13,11 +13,19 @@
         public static function getAll()
         {
             $connection = Connection::getDb();
-            if (!$connection) {
-                return "<h1>Erro ao realizar conexão</h1>";
+            if ($connection) {
+                return "Sucesso ao realizar conexão";
+            } else {
+                return "Erro ao realizar conexão";
             }
 
             $stmt = $connection->query("SELECT * FROM fseletro.people");
+            if ($stmt) {
+                return "Sucesso ao realizar conexão stmt";
+            } else {
+                return "Erro ao realizar conexão stmt";
+            }
+            
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
 
