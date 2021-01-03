@@ -11,7 +11,6 @@ const CardIndexOrder = () => {
 
     function registerOrder(event){
         event.preventDefault();
-       // console.log(event.target);
 
         let formData = new FormData(event.target);
 
