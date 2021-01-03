@@ -9,7 +9,7 @@ class Connection
         $password = "123456";
         $database = "fseletro";
 
-        echo "<h1>Iniciando conexão</h1>";
+        echo "<!!!Iniciando conexão!!";
         $conn = mysql_connect($servername, $username, $password, $database);
         echo "<h1>sucesso conexão</h1>";
 
