@@ -54,7 +54,7 @@ DROP VIEW IF EXISTS `fseletro`.`new_view` ;
 USE `fseletro`;
 CREATE 
      OR REPLACE ALGORITHM = UNDEFINED 
-    DEFINER = `root`@`localhost` 
+    DEFINER = `anatertu`@`192.168.0.164` 
     SQL SECURITY DEFINER
 VIEW `fseletro`.`total` AS
     SELECT 
