@@ -2,9 +2,7 @@ const Card = () => {
     const [people, setPeople] = React.useState([])
     const [render, setRender] = React.useState(false)
     const [msg, setMsg] = React.useState(false)
-  //  const [email, setEmail] = React.useState("")
-    //const [passwords, setPasswords] = React.useState("")
-
+  
     React.useEffect(async () => {
         const url = "http://www.localhost/react-php/backend";
         const response = await fetch(url);
@@ -13,7 +11,6 @@ const Card = () => {
 
     function registerClient(event){
         event.preventDefault();
-       // console.log(event.target);
 
         let formData = new FormData(event.target);
 

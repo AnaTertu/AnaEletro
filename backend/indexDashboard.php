@@ -1,13 +1,13 @@
 <?php
-    require "./Models/People.php";
+    require "./dashboard.php";
 
     header("Access-Control-Allow-Origin:*");  // Permite que outras aplicações acessem a api
    // header("Content-type: application/json";)  //Indicação de arquivos Json
     
-    $peoples = People::getAll();
+    $dashboards = Dashboard::getAll();
 
 
-echo json_encode($people);
+echo json_encode($dashboard);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -23,16 +23,16 @@ echo json_encode($people);
         <?php require "../frontend/header.html"?>
         
         <main class="py-5" style="min-height: 90vh; height: auto">
-            <?php foreach ($peoples as $people) { ?>
+            <?php foreach ($dashboards as $dashboard) { ?>
                 <div class="card w-50 mx-auto mt-4">
                     <div class="card-header">
-                        <?= $people['names'] ?>
+                        <?= $dashboard['names'] ?>
                     </div>
                     <div class="card-body">
-                        <?= $people['posts'] ?>
+                        <?= $dashboard['posts'] ?>
                     </div>
                     <div class="card-footer d-flex align-items-center justify-content-end">
-                        <a class="btn btn-success" href="https://wa.me/<?= $people['phones'] ?>"> 
+                        <a class="btn btn-success" href="https://wa.me/<?= $dashboard['phones'] ?>"> 
                             <i class="fab fa-whatsapp" style="font-size: 24px"></i>                            
                         </a>
                     </div>

@@ -33,12 +33,12 @@
             }               
         } 
         
-        public static function getTotalPeople()
-    {
-        $connection = Connection::getDb();
+            public static function getTotalPeople()
+        {
+            $connection = Connection::getDb();
 
-        $stmt = $connection->query("SELECT count(*) as total_people from people");
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
-    }
+            $stmt = $connection->query("SELECT count(*) as total_people from people");
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        }
 
     }

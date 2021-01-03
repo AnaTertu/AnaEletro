@@ -25,10 +25,21 @@
 
             $stmt = $connection->query("INSERT INTO fseletro.order(namesC, phonesC, addressC, descriptionProducts, pricesEnd, amount) values ('$this->namesC',  '$this->phonesC', '$this->addressC','$this->descriptionProducts', '$this->pricesEnd', '$this->amount')"); 
            
-            if ($stmt->rowCount()>0) {
+            $rouss = $stmt->rowCount();
+
+            if ($rouss->rowCount()>0) {
                 return true;
             } else {
                 return false;
             }       
         }
+
+            public static function getTotalOrder()
+        {
+            $connection = Connection::getDb();
+
+            $stmt = $connection->query("SELECT count(*) as total_order from order");
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        }
+
     }

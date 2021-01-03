@@ -1,10 +1,10 @@
 <?php
-    require "Models/People.php";
-    $total = People::getTotalPeoples();
+    require "./indexDashboard.php";
+    $total = People::getTotalDashboard();
 ?>
 <!--acima eu executo a class apartir dela mesma
     $people = new People;
-    $total = $people->getTotalPeoples();  -->
+    $total = $people->getTotalDashboard();  -->
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -39,7 +39,7 @@
                     labels: ['Clientes', 'Geladeiras', 'Fogões', 'Microondas', 'Lava-roupa', 'Lava-Louças'],
                 datasets: [{
                     label: '# of Votes',
-                    data: [<?= $total[0]["total_peoples"] ?>, 3, 2, 3, 2, 2],
+                    data: [<?= $total[0]["total_Dashboard"] ?>, 3, 2, 3, 2, 2],
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.2)',
                         'rgba(54, 162, 235, 0.2)',
