@@ -17,6 +17,7 @@ const Header = () => {
                 < a href="orderIndex.html" className="navbar-brand nav-link">
                     Registro de pedidos
                 </a>
+
                 <a href="../../../backend/dashboard.php" className="nav-link text-light"> Dashboard </a>
 
             </nav>
