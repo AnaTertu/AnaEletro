@@ -1,8 +1,6 @@
 const Card = () => {
     const [people, setPeople] = React.useState([])
     const [render, setRender] = React.useState(false)
-  //  const [msn, setMsn] = React.useState(false)
-  //  const [registerPeople] = React.useState([])
     
     React.useEffect(async () => {
         const url = "http://www.localhost/react-php/backend";
