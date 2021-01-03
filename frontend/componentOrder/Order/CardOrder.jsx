@@ -1,25 +1,25 @@
 const CardOrder = () => {
     const [order, setOrder] = React.useState([])
-    const [render, setRender] = React.useState(false)
+    const [renderOrder, setRenderOrder] = React.useState(false)
     
     React.useEffect(async () => {
-        const url = "httO//www.localhost/react-php/backend";
-        const response = await fetch(url);
-        setOrder(await response.json());
+        const url = "http//www.localhost/react-php/backend";
+        const respon = await fetch(url);
+        setOrder(await respon.json());
     }, [])
 
-    function registerOrder(event){
-        event.preventDefault();
+    function registerOrder(eventOrder){
+        eventOrder.preventOrderDefault();
 
-        let formData = new FormData(event.target);
+        let formDatas = new FormDatas(eventOrder.target);
 
         const url = "http//www.localhost/react-php/backend/register-order";
 
         fetch(url, {
             method: "POST",
-            body: formData
+            body: formDatas
      })  
-             .then((response) => response.json())
+             .then((respon) => respon.json())
      }
 
     return (

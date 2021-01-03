@@ -1,6 +1,6 @@
 const CardIndexOrder = () => {
     const [orderIndex, setOrderIndex] = React.useState([])
-    const [render, setRender] = React.useState(false)
+    const [renderIndex, setRenderIndex] = React.useState(false)
     const [msgconf, setMsgconf] = React.useState(false)
 
     React.useEffect(async () => {
@@ -23,7 +23,7 @@ const CardIndexOrder = () => {
         })  
             .then((resp) => resp.json())
             .then((dados)=> {
-                setRender(!render);
+                setRenderIndex(!renderIndex);
                 setMsgconf(dados);
 
                 setTimeout(() => {
@@ -36,13 +36,13 @@ const CardIndexOrder = () => {
         <div clasName="container py-5">
 
             <div className="card w-50 mx-auto mt-3 border-0">
-                <form onSubmit={registerOrder}>
-                <input className="form-control mt-2" type="text" name="namesC" placeholder="Nome"/>
-                    <input className="form-control mt-2" type="number" name="phonesC" placeholder="Telefone: "/>
-                    <input className="form-control mt-2" type="text" name="addressC" placeholder="Endereço: "/>
-                    <input className="form-control mt-2" type="text" name="descriptionProducts" placeholder="Descrição do produto: "/>
-                    {/* <input className="form-control mt-2" type="text" name="pricesEnd" placeholder="Valor unitário: "/> */}
-                    <input className="form-control mt-2" type="number" name="amount" placeholder="Quantidade: "/>
+                <form  class="form-inline" onSubmit={registerOrder}>
+                    <input className="form-group mt-2" type="text" name="namesC" placeholder="Nome"/>
+                    <input className="form-group mt-2" type="number" name="phonesC" placeholder="Telefone: "/>
+                    <input className="form-group mt-2" type="text" name="addressC" placeholder="Endereço: "/>
+                    <input className="form-group mt-2" type="text" name="descriptionProducts" placeholder="Descrição do produto: "/>
+                    {/* <input className="form-group mt-2" type="text" name="pricesEnd" placeholder="Valor unitário: "/> */}
+                    <input className="form-group mt-2" type="number" name="amount" placeholder="Quantidade: "/>
                     
                     <button className="btn btn-info w-100 w-2">
                         Escolha de produtos                 
