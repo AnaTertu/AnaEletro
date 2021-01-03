@@ -14,12 +14,12 @@ class Connection
         define('USER', 'anatertu');
         define('PASS', '123456');
         define('DBNAME', 'fseletro');
-        define('PORT', '3306');
+        // define('PORT', '3306');
 
         try {
             echo "!!!Iniciando conexão!!!";
             //Criar a conexão com banco de dados usando o PDO
-            $conn = new pdo('mysql:host=' . HOST . ';port=' . PORT . ';dbname=' . DBNAME, USER, PASS);
+            $conn = new pdo('mysql:host=' . HOST . ';dbname=' . DBNAME, USER, PASS);
             echo "<h1>sucesso conexão</h1>";
         } catch (PDOException $e) {
             echo "Erro: Conexão com banco de dados não foi realizada com sucesso. Erro gerado " . $e->getMessage();
