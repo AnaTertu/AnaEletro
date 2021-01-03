@@ -20,14 +20,6 @@ const Card = () => {
             body: formData
      })  
              .then((response) => response.json())
-    //         .then((dados)=> {
-    //             setRender(!render);
-    //             setmsn(dados);
-
-    //             setTimeout(() => {
-    //                 setmsn(false);
-    //             }, 3000);
-     //    })
      }
 
     return (

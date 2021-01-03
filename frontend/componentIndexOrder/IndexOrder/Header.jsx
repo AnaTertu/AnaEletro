@@ -18,7 +18,8 @@ const Header = () => {
                     Registro de pedidos
                 </a>
 
-                <a href="../../../backend/dashboard.php" className="nav-link text-light"> Dashboard </a>
+                <a href="../../../backend/dashboard.php" className="nav-link text-light"> Dashboard
+                </a>
 
             </nav>
             

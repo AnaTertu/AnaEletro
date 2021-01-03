@@ -6,9 +6,9 @@
         public static function getDb()
         {
             $conn = new PDO(
-                "mysql:host=localhost;dbname=fseletro;charset=utf8",
-                "root",
-                ""
+                "mysql:host=192.168.0.164;dbname=fseletro;charset=utf8",
+                "anatertu",
+                "123456"
             );
 
             if ($conn){
