@@ -9,8 +9,8 @@ class Connection
         $password = "123456";
         $database = "fseletro";
 
-        echo "<!!!Iniciando conexão!!";
-        $conn = mysql_connect($servername, $username, $password, $database);
+        echo "!!!Iniciando conexão!!!";
+        $conn = new PDO("mysql:host=", $servername, ";dbname=", $database, $username, $password);
         echo "<h1>sucesso conexão</h1>";
 
         if ($conn){
