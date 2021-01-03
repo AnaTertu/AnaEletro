@@ -8,9 +8,10 @@ class Connection
         $username = "anatertu";
         $password = "123456";
         $database = "fseletro";
-        
+
         echo "<h1>Iniciando conexão</h1>";
         $conn = mysql_connect($servername, $username, $password, $database);
+        echo "<h1>sucesso conexão</h1>";
 
         if ($conn){
             return $conn;
