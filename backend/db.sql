@@ -44,6 +44,25 @@ CREATE TABLE fseletro.products(
 
 ALTER TABLE fseletro.products ADD CONSTRAINT FOREIGN KEY (idCategory) REFERENCES fseletro.category (idCategory);
 
+CREATE VIEW `total` AS
+SELECT count(*) as total_people from people;
+
+CREATE VIEW `produtos` AS
+SELECT * FROM fseletro.products;
+
+DROP VIEW IF EXISTS `fseletro`.`new_view` ;
+USE `fseletro`;
+CREATE 
+     OR REPLACE ALGORITHM = UNDEFINED 
+    DEFINER = `root`@`localhost` 
+    SQL SECURITY DEFINER
+VIEW `fseletro`.`total` AS
+    SELECT 
+        COUNT(0) AS `total_people`
+    FROM
+        `fseletro`.`people`;
+
+
 INSERT INTO fseletro.category VALUES (1,'Geladeiras'); 
 INSERT INTO fseletro.category VALUES (2, 'Fogões'); 
 INSERT INTO fseletro.category VALUES (3, 'Microondas'); 
