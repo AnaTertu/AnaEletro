@@ -9,9 +9,13 @@ class Connection
         $password = "123456";
         $database = "fseletro";
 
-        echo "!!!Iniciando conexão!!!";
-        $conn = new PDO("mysql:host=", $servername, ";dbname=", $database, $username, $password);
-        echo "<h1>sucesso conexão</h1>";
+        try {
+            echo "!!!Iniciando conexão!!!";
+            $conn = new PDO("mysql:host=", $servername, ";dbname=", $database, $username, $password);
+            echo "<h1>sucesso conexão</h1>";
+        } catch (PDOException $e) {
+            echo "Erro: Conexão com banco de dados não foi realizada com sucesso. Erro gerado " . $e->getMessage();
+        }
 
         if ($conn){
             return $conn;
