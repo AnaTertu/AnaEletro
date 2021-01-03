@@ -13,6 +13,9 @@
         public static function getAll()
         {
             $connection = Connection::getDb();
+            if (!$connection) {
+                return "<h1>Erro ao realizar conexão</h1>";
+            }
 
             $stmt = $connection->query("SELECT * FROM fseletro.people");
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
