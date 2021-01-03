@@ -1,21 +1,14 @@
 <?php
+    $servername = "192.168.0.164";
+    $username = "anatertu";
+    $password = "123456";
+    $database = "fseletro";
 
-    class Connection
-    {
+    $conn = mysql_connect($servername, $username, $password, $database);
 
-        public static function getDb()
-        {
-            $conn = new PDO(
-                "mysql:host=192.168.0.164;dbname=fseletro;charset=utf8",
-                "anatertu",
-                "123456"
-            );
-
-            if ($conn){
-                return $conn;
-            }
-            else {
-                echo "<h1>Erro ao realizar conexão</h1>";
-            }
+        if ($conn){
+            return $conn;
         }
-    }
+        else {
+            echo "<h1>Erro ao realizar conexão</h1>";
+        }
