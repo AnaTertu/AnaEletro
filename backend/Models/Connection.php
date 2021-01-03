@@ -6,9 +6,12 @@
         public static function getDb()
         {
             $conn = new PDO(
-                "mysql:host=192.168.0.164;dbname=fseletro;charset=utf8",
-                "anatertu",
-                "123456"
+                $servername = "192.168.0.164";
+                $username = "anatertu";
+                $password = "123456";
+                $database = "fseletro";
+
+                $conn = mysql_connect($servername, $username, $password, $database);
             );
 
             if ($conn){
