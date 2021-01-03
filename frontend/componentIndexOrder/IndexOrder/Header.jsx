@@ -23,8 +23,8 @@ const Header = () => {
             </nav>
             
             <nav>
-                <h2 className="nav-link text-light"> Seja Bem-vindo(a), cadastre-se aqui!</h2>    
-                <h5 className="nav-link text-light"> Em nossa loja, <em>programadores tem desconto</em> nos produtos para a sua casa!</h5>
+                <h2 className="nav-link text-light"> text!</h2>    
+                <h5 className="nav-link text-light"> text!</h5>
             </nav>
         </header>
     );

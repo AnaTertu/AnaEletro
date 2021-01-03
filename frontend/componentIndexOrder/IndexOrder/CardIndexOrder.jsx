@@ -1,18 +1,18 @@
 const CardIndexOrder = () => {
-    const [orderIndex, setOrderIndex] = React.useState([])
-    const [renderIndex, setRenderIndex] = React.useState(false)
+    const [order, setOrder] = React.useState([])
+    const [renderOrder, setRenderOrder] = React.useState(false)
     const [msgconf, setMsgconf] = React.useState(false)
 
     React.useEffect(async () => {
         const url = "http://www.localhost/react-php/backend";
         const resp = await fetch(url);
-        setOrderIndex(await resp.json());
+        setOrder(await resp.json());
     }, [])
 
-    function registerOrder(eventdone){
-        eventdone.preventdoneDefault();
+    function registerOrd(eventorder){
+        eventorder.preventDefault();
 
-        let formDat = new FormDat(eventdone.target);
+        let formDat = new FormDat(eventorder.target);
 
         const url = "http://www.localhost/react-php/backend/register-order.php";
 
@@ -23,7 +23,7 @@ const CardIndexOrder = () => {
         })  
             .then((resp) => resp.json())
             .then((dados)=> {
-                setRenderIndex(!renderIndex);
+                setRenderOrder(!renderOrder);
                 setMsgconf(dados);
 
                 setTimeout(() => {
@@ -36,7 +36,7 @@ const CardIndexOrder = () => {
         <div clasName="container py-5">
 
             <div className="card w-50 mx-auto mt-3 border-0">
-                <form  class="form-inline" onSubmit={registerOrder}>
+                <form  class="form-inline" onSubmit={registerOrd}>
                     <input className="form-group mt-2" type="text" name="namesC" placeholder="Nome"/>
                     <input className="form-group mt-2" type="number" name="phonesC" placeholder="Telefone: "/>
                     <input className="form-group mt-2" type="text" name="addressC" placeholder="Endereço: "/>

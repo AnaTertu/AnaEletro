@@ -8,10 +8,10 @@ const CardOrder = () => {
         setOrder(await respon.json());
     }, [])
 
-    function registerOrder(eventOrder){
-        eventOrder.preventOrderDefault();
+    function registerOrder(eventorder){
+        eventorder.preventorderDefault();
 
-        let formDatas = new FormDatas(eventOrder.target);
+        let formDatas = new FormDatas(eventorder.target);
 
         const url = "http//www.localhost/react-php/backend/register-order";
 
