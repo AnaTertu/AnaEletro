@@ -3,7 +3,7 @@ const Card = () => {
   const [filteredProducts, setFilteredProducts] = React.useState([]);
   
   React.useEffect(async () => {
-    const url = "http://localhost/react-versiculos/backend/product.php";
+    const url = "http://192.168.0.164/react-versiculos/backend/product.php";
     const response = await fetch(url);
     const prods = await response.json();
     setProduct(prods);
