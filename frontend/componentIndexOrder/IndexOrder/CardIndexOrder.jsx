@@ -4,7 +4,7 @@ const CardIndexOrder = () => {
     const [msgconf, setMsgconf] = React.useState(false)
 
     React.useEffect(async () => {
-        const url = "http://www.localhost/react-php/backend";
+        const url = "http://192.168.0.164/react-versiculos/backend";
         const resp = await fetch(url);
         setOrder(await resp.json());
     }, [])
@@ -14,7 +14,7 @@ const CardIndexOrder = () => {
 
         let formDat = new FormDat(eventorder.target);
 
-        const url = "http://www.localhost/react-php/backend/register-order.php";
+        const url = "http://192.168.0.164/react-versiculos/backend/register-order.php";
 
         
          fetch(url, {

@@ -4,7 +4,7 @@ const Card = () => {
     const [msg, setMsg] = React.useState(false)
   
     React.useEffect(async () => {
-        const url = "http://www.localhost/react-php/backend";
+        const url = "http://192.168.0.164/react-versiculos/backend";
         const response = await fetch(url);
         setPeople(await response.json());
     }, [])
@@ -14,7 +14,7 @@ const Card = () => {
 
         let formData = new FormData(event.target);
 
-        const url = "http://www.localhost/react-php/backend/register-client.php";
+        const url = "http://192.168.0.164/react-versiculos/backend/register-client.php";
 
         
          fetch(url, {

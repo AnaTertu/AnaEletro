@@ -3,7 +3,7 @@ const CardOrder = () => {
     const [renderOrder, setRenderOrder] = React.useState(false)
     
     React.useEffect(async () => {
-        const url = "http//www.localhost/react-php/backend";
+        const url = "http://192.168.0.164/react-versiculos/backend";
         const respon = await fetch(url);
         setOrder(await respon.json());
     }, [])
@@ -13,7 +13,7 @@ const CardOrder = () => {
 
         let formDatas = new FormDatas(eventorder.target);
 
-        const url = "http//www.localhost/react-php/backend/register-order";
+        const url = "http://192.168.0.164/react-versiculos/backend/register-order";
 
         fetch(url, {
             method: "POST",
