@@ -2,7 +2,7 @@ const CardCateg = (props) => {
     const [categories, setCategories] = React.useState([]);
 
     React.useEffect(async () => {
-        const url = "http://localhost/react-php/backend/category.php";
+        const url = "http://localhost/react-versiculos/backend/category.php";
         const response = await fetch(url);
         setCategories(await response.json());
     }, []);
