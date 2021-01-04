@@ -19,7 +19,7 @@ class Connection
         try {
             echo "!!!Iniciando conexão!!!";
             //Criar a conexão com banco de dados usando o PDO
-            $conn = new pdo('mysql:host=' . HOST . ';dbname=' . DBNAME, USER, PASS);
+            $conn = new PDO('mysql:host=' . HOST . ';dbname=' . DBNAME, USER, PASS);
             echo "<h1>sucesso conexão</h1>";
         } catch (PDOException $e) {
             echo "Erro: Conexão com banco de dados não foi realizada com sucesso. Erro gerado " . $e->getMessage();
