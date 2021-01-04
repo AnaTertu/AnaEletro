@@ -12,7 +12,7 @@ class Connection
         //Criar as constantes com as credencias de acesso ao banco de dados
         define('HOST', '192.168.0.164');
         define('USER', 'root');
-        define('PASS', '123456');
+        define('PASS', 'Aa@12345');
         define('DBNAME', 'fseletro');
         // define('PORT', '3306');
 
