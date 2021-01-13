@@ -10,9 +10,7 @@ const Card = () => {
     setFilteredProducts(prods);
   }, []);
 
-
-
-   function exibirProdutos(event){
+  function exibirProdutos(event){
      
     const idCategoria = event.currentTarget.dataset.id;
     console.log(idCategoria)
