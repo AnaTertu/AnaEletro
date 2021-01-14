@@ -44,11 +44,19 @@ CREATE TABLE fseletro.products(
 
 ALTER TABLE fseletro.products ADD CONSTRAINT FOREIGN KEY (idCategory) REFERENCES fseletro.category (idCategory);
 
+ALTER TABLE fseletro.products ADD CONSTRAINT FOREIGN KEY (pricesEnd) REFERENCES fseletro.order (pricesEnd);
+
+
 CREATE VIEW `total` AS
 SELECT count(*) as total_people from people;
 
 CREATE VIEW `produtos` AS
-SELECT * FROM fseletro.products;
+SELECT * FROM fseletro.products JOIN fseletro.category ON products.idCategory = category.idCategory;
+
+CREATE VIEW `prices` AS
+SELECT * FROM fseletro.products JOIN fseletro.pricesEnd ON products.idCategory = category.idCategory;
+
+
 
 DROP VIEW IF EXISTS `fseletro`.`new_view` ;
 USE `fseletro`;
